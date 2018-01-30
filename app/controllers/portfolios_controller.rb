@@ -37,10 +37,11 @@ class PortfoliosController < ApplicationController
 
   def update
     @portfolio_item = Portfolio.find(params[:id])
-    3.times { @portfolio_item.technologies.build }
+
     
     respond_to do |format|
-      if @portfolio_item.update(params.require(portfolio_params))
+      #for some reason had update(params.require(portfolio_params))
+      if @portfolio_item.update(portfolio_params)
         format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully updated.' }
       else
         format.html { render :edit }
