@@ -1,16 +1,83 @@
-<h1>About Me</h1>
+<div class="app-card-ccontainer">
+  <div class="card">
+    <h1>About Me</h1>
 
-<hr>
+    <hr>
 
-<div class="row">
-  <div class="col-md-4">
-    <%= image_tag "replace_image.jpg", width: 300, alt: "Profile Image"%>
-  </div>
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag "replace_image.jpg", width: 300, alt: "Profile Image", class: 'profile-img' %>
+        <div class="skills ">
+          <% @skills.each do |skill| %>
+            <div class="skill">
+              <h4> <%= skill.title %></h4>
+              <div class="progress">
+                <div 
+                  class="progress-bar progress-bar-striped bg-warning"
+                  role="progress-bar"
+                  aria-valurnow="<%= skill.percent_utilized %>"
+                  aria-valuemax="100"
+                  style="width: <%= skill.percent_utilized %>%"
+                ></div>
+              </div>
+            </div>
 
-  <div class="col-md-8">
-    <p>I'm new to programming, but I love to learn.</p>
-    <p>Content holder for future content.</p>
-    
+          <% end %>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <p>I'm new to programming, but I love to learn.</p>
+        <p>Content holder for future content.</p>
+        
+        <p>
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-toggle="collapse"
+            data-target="#jobHistory"
+            aria-expanded="true"
+            aria-controller="jobHistory"
+          >
+            Jobs
+          </button>
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-toggle="collapse"
+            data-target="#education"
+            aria-expanded="true"
+            aria-controller="education"
+          >
+            Education
+          </button>
+        </p>
+
+        <p>
+          <div class="collapse" id="jobHistory">
+            <div class="card card-block">
+              Cheese Cake Factory
+            </div>            
+            <div class="card card-block">
+            </div>
+            <div class="card card-block">
+              jobsssß
+            </div>            
+          </div>
+          <div class="collapse" id="education">
+            <div class="card card-block">
+              Jordan High school
+            </div>            
+            <div class="card card-block">
+              Salt Lake Community College
+            </div>
+            <div class="card card-block">
+              Bottega
+            </div>            
+          </div>
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 
