@@ -1,23 +1,3 @@
-
-User.create!(
-  name:"Admin User",
-  email:"test@test.test",
-  password:"aaaaaa",
-  password_confirmation:"aaaaaa",
-  role:"site_admin"
-)
-
-puts "1 Admin User created"
-
-User.create!(
-  name:"Regular User",
-  email:"testt@test.test",
-  password:"aaaaaa",
-  password_confirmation:"aaaaaa"
-)
-
-puts "1 Regular User created"
-
 3.times do |topic|
     Topic.create!(
         title: "Topic #{topic}"
@@ -73,3 +53,15 @@ puts "9 portfolio items created"
 end
 
 puts "3 technologies created"
+
+1.times do |user|
+    User.create!(
+        name:"Test User",
+        email:"testy@test.test",
+        password:"aaaaaa",
+        password_confirmation:"aaaaaa",
+        role:"site_admin"
+    )
+end
+
+puts "1 site site admin created"

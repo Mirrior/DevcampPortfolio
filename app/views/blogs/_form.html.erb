@@ -10,30 +10,10 @@
   </div>
 
   <div class="field">
-    <%= form.label :topic_id %>
-    <%= form.collection_select(:topic_id, Topic.all, :id, :title,
-                                {
-                                  selected: blog.topic.id,
-                                  include_blank: true
-                                },
-                                class: 'field'
-                              )
-                              %>
-  </div>
-
-  <div class="field">
-    <%= form.radio_button :status, 'draft' %>
-    <%= form.label :status, 'Draft' %>
-
-    <%= form.radio_button :status, 'published' %>
-    <%= form.label :status, 'Published' %>
-  </div>
-
-  <div class="field">
     <%= form.text_area :body, class: 'form-control', rows: 15, placeholder: "Content" %>
   </div>
 
   <div class="actions">
-    <%= form.submit "Submit", class: "btn btn-primary"%>
+    <%= form.submit %>
   </div>
 <% end %>
