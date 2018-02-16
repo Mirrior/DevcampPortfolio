@@ -14,6 +14,7 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+
     <%= render "shared/nav", location: 'top' %>
 
     <% if current_user.is_a?(User) %>
@@ -26,7 +27,7 @@
     <%= yield %>
 
     <% if session[:source] %>
-    <p>Thanks for visting from <%=session[:source]%></p>
+      <p>Thanks for visting from <%=session[:source]%></p>
     <% end %>
   </body>
 </html>
