@@ -11,7 +11,7 @@ puts "1 Admin User created"
 
 User.create!(
   name:"Regular User",
-  email:"testt@test.test",
+  email:"test@test.test",
   password:"aaaaaa",
   password_confirmation:"aaaaaa"
 )
